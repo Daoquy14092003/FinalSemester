@@ -1,39 +1,45 @@
-# Distance_Monitoring_Intrusion_Warning_System
+# Hệ Thống Mở Cửa Tự Động
 
-## Tổng Quan Và Mục Tiêu Của Dự Án
-- Dự án này là một "Hệ Thống Giám Sát Khoảng Cách và Cảnh Báo Xâm Nhập" được thiết kế nhằm nâng cao khả năng giám sát an ninh cho cửa ra vào và hành lang. Hệ thống sử dụng cảm biến siêu âm để đo khoảng cách các vật thể và cảm biến chuyển động PIR để phát hiện xâm nhập. Khi phát hiện có xâm nhập (phát hiện chuyển động và khoảng cách dưới một ngưỡng nhất định), hệ thống sẽ kích hoạt cảnh báo bằng còi và đèn LED, đồng thời gửi thông báo tới dashboard Node-RED qua giao thức MQTT.
-- Được lấy cảm hứng từ nhu cầu thực tế về bảo mật, sự phát triển của công nghệ IoT, và yêu cầu giám sát và phản ứng nhanh chóng trong các tình huống xâm nhập. Với mục tiêu bảo vệ an ninh và tài sản, dự án giúp cung cấp giải pháp an ninh dễ triển khai và hiệu quả cho các khu vực cần bảo vệ.
+## Tổng Quan Dự Án
+Dự án “Hệ Thống Mở Cửa Tự Động” kết hợp các công nghệ IoT như ESP32, module RFID, servo motor SG90, LCD I2C, và buzzer nhằm tạo nên một hệ thống điều khiển mở/khóa cửa thông minh. Hệ thống cung cấp giao diện giữa người dùng và thiết bị qua Node-RED Dashboard, cho phép hiển thị trạng thái cửa, theo dõi UID thẻ RFID, và điều khiển từ xa qua MQTT
 
+## Đặt Vấn Đề
+Trong những tòa nhà, khu vực làm việc, hay nhà thông minh, việc quản lý trạng thái cửa một cách tự động là nhu cầu cần thiết. Hệ thống truyền thống sử dụng chìa khóa có thể bị thất lạc, sao chép trái phép, hoặc mất nhiều thời gian thao tác. Giải pháp IoT đưa ra cấu trúc mở/khóa thông minh, bảo mật, và linh hoạt.
+
+## Mục Tiêu
+   - Tạo một hệ thống mở/khóa cửa tự động sử dụng RFID.
+   - Hiển thị trạng thái trên màn hình LCD.
+   - Gửi những thông báo quan trọng qua giao thức Node-RED Dashboard.
+   - Đảm bảo an toàn và dễ sử dụng.
+   - 
 ## Các Thành Phần Chính
-- **Cảm Biến**:
-  - **Cảm Biến Siêu Âm HC-SR04**: Đo khoảng cách của các vật thể trong phạm vi.
-  - **Cảm Biến Chuyển Động PIR**: Phát hiện chuyển động để xác định xâm nhập.
-- **Thiết Bị Cảnh Báo**:
-  - **Buzzer**: Phát âm thanh cảnh báo xâm nhập ngay lập tức.
-  - **Đèn LED**: Kết nối qua một điện trở, hiển thị cảnh báo bằng ánh sáng.
-- **Vi Điều Khiển**:
+- **Phần Cứng**:
   - **ESP32**: Kết nối với các cảm biến, xử lý dữ liệu, kích hoạt cảnh báo và giao tiếp với dashboard Node-RED qua MQTT.
+  - **RFID (MFRC522)**: Đọc UID của thẻ.
+  - **Servo SG90**: Điều khiển đống tác mở/khóa cửa.
+  - **Buzzer**: Phát âm thanh cảnh báo 
+  - **LCD I2C (16x2)**: Hiển thị trạng thái.
+- **Phần Mềm**:
+  - **NodeRed Dashboard**: Giao diện điều khiển và hiển thị
+  - **MQTT Broker**: Kênh truyền thông tin giữa ESP32 và Node-RED..
+  - **PlatformIO IDE**: Môi trường làm việc với ESP32.
 
 ## Cách Hoạt Động
-1. **Phát Hiện Khoảng Cách và Chuyển Động**:
-   - **Cảm Biến HC-SR04** đo khoảng cách các vật thể trong phạm vi.
-   - **Cảm Biến PIR** phát hiện chuyển động trong khu vực giám sát.
+1. **Quá Trình Mở Cửa**:
+   - Khi người dùng quét thẻ RFID, UID sẽ được gửi tới ESP32.
+   - ESP32 so sánh UID với danh sách cho phép.
+   - Nếu đúng, servo quay để mở cửa và buzzer báo.
+   - Nếu sai, buzzer sẽ có âm báo lỗi và LCD hiển thị “Wrong Card!”.
 
-2. **Logic Cảnh Báo Xâm Nhập**:
-   - Khi cảm biến PIR phát hiện chuyển động và cảm biến siêu âm phát hiện một vật thể trong khoảng cách ngưỡng nhất định, hệ thống sẽ xác định đó là xâm nhập.
-   - ESP32 sẽ kích hoạt còi và đèn LED để cảnh báo trực tiếp tại chỗ.
-   - ESP32 cũng sẽ gửi thông báo cảnh báo qua **MQTT** tới dashboard Node-RED.
-
-3. **Dashboard Node-RED**:
-   - Hiển thị dữ liệu trực tiếp từ các cảm biến.
-   - Hiển thị thông báo khi phát hiện xâm nhập.
-   - Cho phép người dùng điều khiển bật/tắt còi và đèn LED từ xa.
+2. **Gửi và nhận thông tin qua MQTT:**:
+   - ESP32 publish UID và trạng thái cửa lên topic.
+   - Node-RED hiển thị trạng thái và cho phép điều khiển mở/khóa từ xa.
 
 ## Ưu Điểm Và Ứng Dụng
-   - Xây dựng một hệ thống phù hợp cho việc giám sát an ninh tại cửa ra vào, hành lang, hoặc bất kỳ khu vực nào cần theo dõi chuyển động và khoảng cách.
-   - Ứng dụng có thể sử dụng trong các khu vực dân cư, thương mại, hoặc công nghiệp để cảnh báo người dùng về các xâm nhập không được phép.
-   - Có thể tích hợp NodeRed qua NodeRed Dashboard để hiển thị và điều
-   - Dễ lắp đắt với chi phí thấp
+   - Bảo mật cao: RFID giúp giảm nguy cơ sao chép chìa khóa.
+   - Tiện lợi: Theo dõi và điều khiển từ xa qua MQTT.
+   - Linh hoạt: Tùy chỉnh giao diện Node-RED dễ dàng.
+   - Khả năng mở rộng: Tích hợp thêm các thiết bị IoT khác.
 
 ## Sơ đồ khối 
 ![SƠ ĐỒ KHỐI](images/My_BlockDiagram.png)
