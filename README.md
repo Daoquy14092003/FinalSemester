@@ -45,7 +45,7 @@ Trong những tòa nhà, khu vực làm việc, hay nhà thông minh, việc qu�
    - Khả năng mở rộng: Tích hợp thêm các thiết bị IoT khác.
 
 ## Sơ đồ khối 
-![SƠ ĐỒ KHỐI](images/My_BlockDiagram.png)
+![SƠ ĐỒ KHỐI](images/MyBlockDiagram.png)
 
 ## Sơ đồ thuật toán
 ![SƠ ĐỒ THUẬT TOÁN](images/My_Flowchart.png)
