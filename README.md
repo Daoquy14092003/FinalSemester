@@ -1,13 +1,13 @@
-# Hệ Thống Mở Cửa Tự Động
+# Hệ Thống Phát Hiện Xâm Nhập Tích Hợp Mở Cửa Tự Động
 
 ## Tổng Quan Dự Án
-Dự án “Hệ Thống Mở Cửa Tự Động” kết hợp các công nghệ IoT như ESP32, module RFID, servo motor SG90, LCD I2C, và buzzer nhằm tạo nên một hệ thống điều khiển mở/khóa cửa thông minh. Hệ thống cung cấp giao diện giữa người dùng và thiết bị qua Node-RED Dashboard, cho phép hiển thị trạng thái cửa, theo dõi UID thẻ RFID, và điều khiển từ xa qua MQTT
+Dự án “Hệ Thống Phát Hiện Xâm Nhập Tích Hợp Mở Cửa Tự Động” kết hợp các công nghệ IoT như ESP32, module RFID, servo motor SG90, LCD I2C, cảm biến chuyển động PIR và buzzer nhằm tạo nên một hệ thống phát hiện nếu có ai đó đến gần và điều khiển mở/khóa cửa thông minh nếu có quyền được vào. Hệ thống cung cấp giao diện giữa người dùng và thiết bị qua Node-RED Dashboard, cho phép hiển thị trạng thái xâm nhập, trạng thái cửa, theo dõi UID thẻ RFID, và điều khiển từ xa qua MQTT
 
 ## Đặt Vấn Đề
 Trong những tòa nhà, khu vực làm việc, hay nhà thông minh, việc quản lý trạng thái cửa một cách tự động là nhu cầu cần thiết. Hệ thống truyền thống sử dụng chìa khóa có thể bị thất lạc, sao chép trái phép, hoặc mất nhiều thời gian thao tác. Giải pháp IoT đưa ra cấu trúc mở/khóa thông minh, bảo mật, và linh hoạt.
 
 ## Mục Tiêu
-   - Tạo một hệ thống mở/khóa cửa tự động sử dụng RFID.
+   - Tạo một hệ thống vừa an ninh với phát hiện xâm nhập và vừa tiện lợi với mở/khóa cửa tự động sử dụng RFID.
    - Hiển thị trạng thái trên màn hình LCD.
    - Gửi những thông báo quan trọng qua giao thức Node-RED Dashboard.
    - Đảm bảo an toàn và dễ sử dụng.
@@ -25,7 +25,10 @@ Trong những tòa nhà, khu vực làm việc, hay nhà thông minh, việc qu�
   - **PlatformIO IDE**: Môi trường làm việc với ESP32.
 
 ## Cách Hoạt Động
-1. **Quá Trình Mở Cửa**:
+1. **Cách lấy UID từ thẻ RFID**:
+   - Sử dụng file UID_Scan.h để lấy UID từ thẻ RFID
+   - Sử dụng UID đó cho main code
+2. **Quá Trình Mở Cửa**:
    - Khi người dùng quét thẻ RFID, UID sẽ được gửi tới ESP32.
    - ESP32 so sánh UID với danh sách cho phép.
    - Nếu đúng, servo quay để mở cửa và buzzer báo.
