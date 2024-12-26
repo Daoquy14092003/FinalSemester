@@ -48,7 +48,7 @@ Trong những tòa nhà, khu vực làm việc, hay nhà thông minh, việc qu�
 ![SƠ ĐỒ KHỐI](images/MyBlockDiagram.png)
 
 ## Sơ đồ thuật toán
-![SƠ ĐỒ THUẬT TOÁN](images/My_Flowchart.png)
+![SƠ ĐỒ THUẬT TOÁN](images/MyFlowchart.png)
 
 ## Cấu hình NodeRed
 ![CẤU HÌNH NODERED](images/My_NodeRed.png)
