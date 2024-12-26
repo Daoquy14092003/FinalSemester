@@ -1,4 +1,4 @@
-# Hệ Thống Phát Hiện Xâm Nhập Tích Hợp Mở Cửa Tự Động
+# HỆ THỐNG CẢNH BÁO XÂM NHẬP TÍCH HỢP MỞ CỬA TỰ ĐỘNG
 
 ## Tổng Quan Dự Án
 Dự án “Hệ Thống Phát Hiện Xâm Nhập Tích Hợp Mở Cửa Tự Động” kết hợp các công nghệ IoT như ESP32, module RFID, servo motor SG90, LCD I2C, cảm biến chuyển động PIR và buzzer nhằm tạo nên một hệ thống phát hiện nếu có ai đó đến gần và điều khiển mở/khóa cửa thông minh nếu có quyền được vào. Hệ thống cung cấp giao diện giữa người dùng và thiết bị qua Node-RED Dashboard, cho phép hiển thị trạng thái xâm nhập, trạng thái cửa, theo dõi UID thẻ RFID, và điều khiển từ xa qua MQTT
