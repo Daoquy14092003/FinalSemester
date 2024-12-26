@@ -51,7 +51,7 @@ Trong những tòa nhà, khu vực làm việc, hay nhà thông minh, việc qu�
 ![SƠ ĐỒ THUẬT TOÁN](images/MyFlowchart.png)
 
 ## Cấu hình NodeRed
-![CẤU HÌNH NODERED](images/My_NodeRed.png)
+![CẤU HÌNH NODERED](images/MyNodeRed.png)
 
 ## Cấu trúc và chức năng của các node trong NodeRed
 - **Nhận và hiển thị dữ liệu về khoảng cách**:
