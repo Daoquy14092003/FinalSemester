@@ -4,10 +4,10 @@
 Dự án “Hệ Thống Phát Hiện Xâm Nhập Tích Hợp Mở Cửa Tự Động” kết hợp các công nghệ IoT như ESP32, module RFID, servo motor SG90, LCD I2C, cảm biến chuyển động PIR và buzzer nhằm tạo nên một hệ thống phát hiện nếu có ai đó đến gần và điều khiển mở/khóa cửa thông minh nếu có quyền được vào. Hệ thống cung cấp giao diện giữa người dùng và thiết bị qua Node-RED Dashboard, cho phép hiển thị trạng thái xâm nhập, trạng thái cửa, theo dõi UID thẻ RFID, và điều khiển từ xa qua MQTT
 
 ## Đặt Vấn Đề
-Trong những tòa nhà, khu vực làm việc, hay nhà thông minh, việc quản lý trạng thái cửa một cách tự động là nhu cầu cần thiết. Hệ thống truyền thống sử dụng chìa khóa có thể bị thất lạc, sao chép trái phép, hoặc mất nhiều thời gian thao tác. Giải pháp IoT đưa ra cấu trúc mở/khóa thông minh, bảo mật, và linh hoạt.
+Trong những tòa nhà, khu vực làm việc, hay nhà thông minh, việc quản lý an ninh và trạng thái cửa một cách tự động là nhu cầu cần thiết. Hệ thống truyền thống sử dụng chìa khóa có thể bị thất lạc, sao chép trái phép, hoặc mất nhiều thời gian thao tác. Giải pháp IoT đưa ra cấu trúc mở/khóa thông minh, bảo mật, và linh hoạt.
 
 ## Mục Tiêu
-   - Tạo một hệ thống vừa an ninh với phát hiện xâm nhập và vừa tiện lợi với mở/khóa cửa tự động sử dụng RFID.
+   - Tạo một hệ thống vừa an ninh với phát hiện xâm nhập với PIR Sensor và vừa tiện lợi với mở/khóa cửa tự động sử dụng RFID.
    - Hiển thị trạng thái trên màn hình LCD.
    - Gửi những thông báo quan trọng qua giao thức Node-RED Dashboard.
    - Đảm bảo an toàn và dễ sử dụng.
@@ -101,26 +101,45 @@ Trong những tòa nhà, khu vực làm việc, hay nhà thông minh, việc qu�
 ![Mô Phỏng](images/MySystemSimulation.png)
 
 ## Kết quả  
-![Kết Quả](images/My_System_1.jpg)
-![Dashboard](images/My_NodeRed_Dashboard.png)
-  - Sau khi phát hiện có xâm nhập, led đã sáng và buzzer đã kêu đúng như dự đoán
-  - Kết quả hiển thị trên NodeRed Dashboard :
-    - Gauge đã hiển thị dữ liệu về khoảng cách của sự xâm nhập đối với hệ thống
-    - Cảnh báo phát hiện xâm nhập "Intruder detected!" hiển thị ở góc phải Dashboard
+![Kết Quả]()
+![Dashboard]()
+  - Khi phát hiện chuyển động (ví dụ: có người đến gần cửa),Buzzer sẽ kêu khi có chuyển động, nhằm cảnh báo người dùng về sự hiện diện gần cửa
+    
+  - Khi người dùng quét thẻ RFID với UID đúng :
+    - Servo motor điều khiển cơ chế mở/đóng cửa. Khi thẻ hợp lệ được quét, servo motor sẽ quay đến góc xác định, mở hoặc đóng cửa.
+    - Cửa sẽ tự động mở hoặc đóng tùy theo trạng thái hiện tại của khóa.
+    - LCD hiển thị thông tin khi quét thẻ đúng hoặc sai.
+   
+  - Tình trạng khóa cửa và phản hồi qua MQTT : 
+    - Khi thẻ RFID hợp lệ được quét, hệ thống sẽ thay đổi trạng thái khóa và gửi thông báo về trạng thái cửa (mở hoặc đóng) qua MQTT đến các thiết bị giám sát.
+    - Node-RED sẽ nhận các thông báo từ MQTT và cập nhật thông tin về trạng thái cửa và khóa trên dashboard.
+    - Hệ thống sử dụng MQTT để giao tiếp giữa các thiết bị, gửi thông tin về tình trạng cửa và phản hồi từ các cảm biến.
+
+  - Cảnh báo xâm nhập nếu thẻ UID sai :
+    - Khi có sự phát hiện chuyển động và thẻ RFID không hợp lệ, hệ thống sẽ gửi thông báo cảnh báo "Invalid Card" qua LCD.
+    - Cảnh báo này giúp người dùng nhận biết về hành vi không hợp lệ và có thể xử lý tình huống.
+
+  - Kết quả hiển thị trên Node-Red Dashboard :
     - Trạng thái chuyển động được nhận biết với text "Motion Detected"
-    - Có thể sử dụng button "Tắt cảnh báo" để tắt ngay led và buzzer nếu cần thiết
-    - Khi không có xâm nhập, led và buzzer của hệ thống không hoạt động và trạng thái chuyển động hiển thị "No motion" 
+    - Hiển thị UID, trạng thái thẻ RFID ( Card Status ) trên bảng điều khiển qua các Node Text.
+    - Hiển thị lịch sử của lần quét thẻ RFID.
+    - Khi muốn khóa điều khiển Servo, chỉ cần nhấn nút trên bảng điều khiển.
+
+  - Tính ổn định qua những lần thử nghiệm :
+    - Hệ thống hoạt động vẫn có lúc thiếu ổn định
 
 ## Hướng phát triển
-  - Tích hợp trên điện thoại để giám sát và điều khiển trực quan hơn
-  - Tăng tính chính xác bằng việc cải thiện thuật toán và thêm vào các cảm biến ( Radar, hình ảnh, ... )
-  - Thiết kế vỏ bọc mô hình hợp lí để bảo vệ hệ thống
-  - Tối ưu hóa năng lượng với nguồn cấp
-  - Tăng tính năng bảo mật cho hệ thống
-  - Có thể nghĩ đến kết hợp AI,ML để phân tích dữ liệu từ cảm biến và phân tích đối tượng phát hiện
+  - Tích hợp trên điện thoại để giám sát và điều khiển trực quan hơn.
+  - Tăng cường bảo mật bằng cách sử dụng các phương pháp xác thực khác (ví dụ: mật khẩu hoặc sinh trắc học).
+  - Thiết kế vỏ bọc mô hình hợp lí để bảo vệ hệ thống.
+  - Tối ưu hóa năng lượng với nguồn cấp.
+  - Tăng tính năng bảo mật cho hệ thống.
+  - Có thể nghĩ đến kết hợp AI,ML và database.
 
 ## Kết luận 
-Hệ thống "Distance Monitoring and Intrusion Warning System" là một giải pháp giám sát hiệu quả, kết hợp cảm biến và công nghệ IoT để phát hiện xâm nhập và giám sát từ xa. Với khả năng gửi cảnh báo qua MQTT và tích hợp với Node-RED Dashboard, hệ thống mang lại tính tiện lợi, bảo mật và khả năng tùy chỉnh cao. Đây là một giải pháp phù hợp để tăng cường an ninh cho các lối đi, hành lang, hoặc không gian cần bảo vệ, đồng thời có tiềm năng mở rộng ứng dụng trong các lĩnh vực như nhà thông minh, kho bãi và giao thông.
+"Hệ Thống Cảnh Báo Xâm Nhập Tích Hợp Mở Cửa Tự Động" là một giải pháp hiệu quả và tiện lợi cho việc kiểm soát truy cập và bảo mật. Hệ thống hoạt động ổn định, dễ sử dụng và có thể mở rộng thêm các tính năng bảo mật trong tương lai. Đây là một giải pháp đáng tin cậy cho các ứng dụng như cửa an ninh, hệ thống kiểm soát vào ra tại các tòa nhà, hoặc hệ thống nhà thông minh.
+
+
 
 
 
