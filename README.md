@@ -126,10 +126,12 @@ Trong những tòa nhà, khu vực làm việc, hay nhà thông minh, việc qu�
     - Khi muốn khóa điều khiển Servo, chỉ cần nhấn nút trên bảng điều khiển.
 
   - Tính ổn định qua những lần thử nghiệm :
-    - Hệ thống hoạt động vẫn có lúc thiếu ổn định
+    - Hệ thống hoạt động ổn trong quá trình phát hiện xâm nhập, quét thẻ RFID và mở cửa tự động.
+    - Tuy nhiên vẫn có những lần thử nghiệm hệ thống hoạt động thiếu ổn định do vấn đề kết nối phần cứng và chưa tối ưu hóa phần mềm.
 
 ## Hướng phát triển
   - Tích hợp trên điện thoại để giám sát và điều khiển trực quan hơn.
+  - Tối ưu hóa phần mềm, cải thiện thuật toán.
   - Tăng cường bảo mật bằng cách sử dụng các phương pháp xác thực khác (ví dụ: mật khẩu hoặc sinh trắc học).
   - Thiết kế vỏ bọc mô hình hợp lí để bảo vệ hệ thống.
   - Tối ưu hóa năng lượng với nguồn cấp.
