@@ -102,7 +102,7 @@ Trong những tòa nhà, khu vực làm việc, hay nhà thông minh, việc qu�
 
 ## Kết quả  
 ![Kết Quả]()
-![Dashboard]()
+![Dashboard](images/MyNodeRedDashboard.png)
   - Khi phát hiện chuyển động (ví dụ: có người đến gần cửa),Buzzer sẽ kêu khi có chuyển động, nhằm cảnh báo người dùng về sự hiện diện gần cửa
     
   - Khi người dùng quét thẻ RFID với UID đúng :
