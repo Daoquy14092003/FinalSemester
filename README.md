@@ -11,18 +11,23 @@ Trong những tòa nhà, khu vực làm việc, hay nhà thông minh, việc qu�
    - Hiển thị trạng thái trên màn hình LCD.
    - Gửi những thông báo quan trọng qua giao thức Node-RED Dashboard.
    - Đảm bảo an toàn và dễ sử dụng.
-   - 
+
 ## Các Thành Phần Chính
 - **Phần Cứng**:
   - **ESP32**: Kết nối với các cảm biến, xử lý dữ liệu, kích hoạt cảnh báo và giao tiếp với dashboard Node-RED qua MQTT.
   - **RFID (MFRC522)**: Đọc UID của thẻ.
   - **Servo SG90**: Điều khiển đống tác mở/khóa cửa.
-  - **Buzzer**: Phát âm thanh cảnh báo 
+  - **PIR Sensor**: Phát hiện và cảnh báo khi có người đến gần.
+  - **Buzzer**: Phát âm thanh cảnh báo.
   - **LCD I2C (16x2)**: Hiển thị trạng thái.
 - **Phần Mềm**:
-  - **NodeRed Dashboard**: Giao diện điều khiển và hiển thị
+  - **NodeRed Dashboard**: Giao diện điều khiển và hiển thị.
   - **MQTT Broker**: Kênh truyền thông tin giữa ESP32 và Node-RED..
   - **PlatformIO IDE**: Môi trường làm việc với ESP32.
+
+## Sơ đồ kết nối chân
+![SƠ ĐỒ KẾT NỐI CHÂN]()
+
 
 ## Cách Hoạt Động
 1. **Cách lấy UID từ thẻ RFID**:
