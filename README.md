@@ -98,7 +98,7 @@ Trong những tòa nhà, khu vực làm việc, hay nhà thông minh, việc qu�
   - **Node Text Servo Status**: hiển thị trạng thái của Servo ( Locked/Unlocked )
     
 ## Mô phỏng hệ thống 
-![Mô Phỏng](images/My_System_2.jpg)
+![Mô Phỏng](images/MySystemSimulation.png)
 
 ## Kết quả  
 ![Kết Quả](images/My_System_1.jpg)
