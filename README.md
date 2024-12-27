@@ -26,7 +26,7 @@ Trong những tòa nhà, khu vực làm việc, hay nhà thông minh, việc qu�
   - **PlatformIO IDE**: Môi trường làm việc với ESP32.
 
 ## Sơ đồ kết nối chân
-![SƠ ĐỒ KẾT NỐI CHÂN]()
+![SƠ ĐỒ KẾT NỐI CHÂN](images/MyPinConnectionDiagram.png)
 
 
 ## Cách Hoạt Động
