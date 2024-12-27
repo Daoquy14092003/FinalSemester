@@ -33,13 +33,15 @@ Trong những tòa nhà, khu vực làm việc, hay nhà thông minh, việc qu�
 1. **Cách lấy UID từ thẻ RFID**:
    - Sử dụng file UID_Scan.h để lấy UID từ thẻ RFID
    - Sử dụng UID đó cho main code
-2. **Quá Trình Mở Cửa**:
+
+2.
+3. **Quá Trình Mở Cửa**:
    - Khi người dùng quét thẻ RFID, UID sẽ được gửi tới ESP32.
    - ESP32 so sánh UID với danh sách cho phép.
    - Nếu đúng, servo quay để mở cửa và buzzer báo.
    - Nếu sai, buzzer sẽ có âm báo lỗi và LCD hiển thị “Wrong Card!”.
 
-2. **Gửi và nhận thông tin qua MQTT:**:
+4. **Gửi và nhận thông tin qua MQTT:**:
    - ESP32 publish UID và trạng thái cửa lên topic.
    - Node-RED hiển thị trạng thái và cho phép điều khiển mở/khóa từ xa.
 
@@ -59,26 +61,34 @@ Trong những tòa nhà, khu vực làm việc, hay nhà thông minh, việc qu�
 ![CẤU HÌNH NODERED](images/MyNodeRed.png)
 
 ## Cấu trúc và chức năng của các node trong NodeRed
-- **Nhận và hiển thị dữ liệu về khoảng cách**:
+- **Ghi lại và hiển thị lịch sử UID (RFID Logs)**:
   - **Node MQTT in**:
-    - **Topic** : Security/distance
+    - **Topic** : esp32/rfid/log
     - **Qos** : 0
-  - **Node Gauge (khoảng cách)**: hiển thị khoảng cách của vật thể so với giới hạn 
-- **Nhận và hiển thị dữ liệu cho việc phát hiện chuyển động**:
+  - **Node Function**: xử lí dữ liệu UID, trạng thái, thời gian.
+  - **Node Tempalte (table)**: hiển thị lịch sử quét và nhận dạng UID.
+- **Hiển thị thông tin của RFID ( RFID Information)**:
   - **Node MQTT in**:
-    - **Topic** : Security/motion
+    - **Topic** : esp32/rfid/uid
     - **Qos** : 0
-  - **Node Text (trạng thái chuyển động)**: hiển thị trạng thái chuyển động bằng text
-- **Nhận dữ liệu và hiển thị cảnh báo**:
+  - **Node Function**: xử lí dữ liệu từ ESP32
+  - **Node Text RFID UID Display** : Hiển thị UID ( Current UID )
+  - **Node Text RFID Status** : Hiển thị trạng thái UID ( Card Status ) ( Valid/Invalid )
+- **Nhận dữ liệu và cảnh báo xâm nhập**:
   - **Node MQTT in**:
-    - **Topic** : Security/warning
+    - **Topic** : esp32/motion/warning
     - **Qos** : 0
-  - **Node Notification (cảnh báo)**: hiển thị cảnh báo phát hiện xâm nhập trên dashboard
-- **Thực hiện tắt cảnh báo (led+buzzer) bằng nút bấm nếu cần thiết**:
-  - **Node Button**: tắt cảnh báo bao gồm led và buzzer nếu cần thiết bằng một nút nhấn 
+  - **Node Text Motion Warning**: hiển thị cảnh báo phát hiện xâm nhập trên dashboard
+- **Điều khiển Servo mở cửa**:
+  - **Node Switch**: LOCK/UNLOCK servo bằng một nút nhấn 
   - **Node MQTT out**:
-    - **Topic** : Security/reset
+    - **Topic** : esp32/servo/control
     - **Qos** : 0
+- **Hiển thị trạng thái servo mở cửa**: 
+  - **Node MQTT in**:
+    - **Topic** : esp32/servo/status
+    - **Qos** : 0
+  - **Node Text Servo Status**: hiển thị trạng thái của Servo ( Locked/Unlocked )
     
 ## Mô phỏng hệ thống 
 ![Mô Phỏng](images/My_System_2.jpg)
