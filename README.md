@@ -49,8 +49,8 @@ Trong những tòa nhà, khu vực làm việc, hay nhà thông minh, việc qu�
    - Node-RED hiển thị trạng thái và cho phép điều khiển mở/khóa từ xa.
 
 5. **Xem lại dữ liệu và lịch sử, điều khiển servo**:
-- Node-RED dashboard cho phép người dùng xem trạng thái và thông tin UID, lịch sử quét UID
-- Node-RED dashboard cho phép người dùng điều khiển servo mở cửa
+   - Node-RED dashboard cho phép người dùng xem trạng thái và thông tin UID, lịch sử quét UID
+   - Node-RED dashboard cho phép người dùng điều khiển servo mở cửa
 
 ## Ưu Điểm Và Ứng Dụng
    - Bảo mật và tính an ninh cao: RFID và PIR giúp giảm nguy cơ sao chép chìa khóa.
