@@ -31,22 +31,29 @@ Trong những tòa nhà, khu vực làm việc, hay nhà thông minh, việc qu�
 
 ## Cách Hoạt Động
 1. **Cách lấy UID từ thẻ RFID**:
-   - Sử dụng file UID_Scan.h để lấy UID từ thẻ RFID
-   - Sử dụng UID đó cho main code
+   - Sử dụng file UID_Scan.h để lấy UID từ thẻ RFID.
+   - Sử dụng UID đó cho main code.
 
-2.
+2. **Phát hiện có người đến gần và cảnh báo**:
+   - Khi có người hoặc vật thể đến gần, cảm biến chuyển động PIR sẽ nhận diện.
+   - Đưa ra cảnh báo với buzzer.
+
 3. **Quá Trình Mở Cửa**:
    - Khi người dùng quét thẻ RFID, UID sẽ được gửi tới ESP32.
    - ESP32 so sánh UID với danh sách cho phép.
    - Nếu đúng, servo quay để mở cửa và buzzer báo.
    - Nếu sai, buzzer sẽ có âm báo lỗi và LCD hiển thị “Wrong Card!”.
 
-4. **Gửi và nhận thông tin qua MQTT:**:
+4. **Gửi và nhận thông tin qua MQTT**:
    - ESP32 publish UID và trạng thái cửa lên topic.
    - Node-RED hiển thị trạng thái và cho phép điều khiển mở/khóa từ xa.
 
+5. **Xem lại dữ liệu và lịch sử, điều khiển servo**:
+- Node-RED dashboard cho phép người dùng xem trạng thái và thông tin UID, lịch sử quét UID
+- Node-RED dashboard cho phép người dùng điều khiển servo mở cửa
+
 ## Ưu Điểm Và Ứng Dụng
-   - Bảo mật cao: RFID giúp giảm nguy cơ sao chép chìa khóa.
+   - Bảo mật và tính an ninh cao: RFID và PIR giúp giảm nguy cơ sao chép chìa khóa.
    - Tiện lợi: Theo dõi và điều khiển từ xa qua MQTT.
    - Linh hoạt: Tùy chỉnh giao diện Node-RED dễ dàng.
    - Khả năng mở rộng: Tích hợp thêm các thiết bị IoT khác.
