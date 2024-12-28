@@ -1,6 +1,4 @@
-/***
- * generic `setup_wifi` utilities
- ***/
+
 
 #pragma once
 #include <Arduino.h>
