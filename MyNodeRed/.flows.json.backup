@@ -1,0 +1,591 @@
+[
+    {
+        "id": "19d6d06d8c31909c",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "d4620acea1d9be74",
+        "type": "subflow",
+        "name": "Subflow 1",
+        "info": "",
+        "in": [],
+        "out": []
+    },
+    {
+        "id": "0fe52e91176c9d60",
+        "type": "ui_group",
+        "name": "",
+        "tab": "",
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "6219e4284a0819e7",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-dark",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#097479",
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#0eb8c0",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "8b521a210af7a3cf",
+        "type": "ui_group",
+        "d": true,
+        "name": "Group 1",
+        "tab": "",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "45d71e8fa5e429e0",
+        "type": "ui_group",
+        "name": "Group 2",
+        "tab": "",
+        "order": 2,
+        "disp": true,
+        "width": 6
+    },
+    {
+        "id": "0690b7aa1832f8f5",
+        "type": "ui_group",
+        "name": "Group 3",
+        "tab": "",
+        "order": 3,
+        "disp": true,
+        "width": 6
+    },
+    {
+        "id": "9f7917c793833ec4",
+        "type": "ui_tab",
+        "name": "MySystem",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "7c1593cbbdf55e3e",
+        "type": "ui_group",
+        "name": "Hello",
+        "tab": "1a2c9a73884cf4ae",
+        "order": 1,
+        "disp": true,
+        "width": "14",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "068907cb454e4eea",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "broker.emqx.io",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "8aebb0c70d06a469",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "1c87c1a181057836",
+        "type": "ui_group",
+        "name": "Data",
+        "tab": "9f7917c793833ec4",
+        "order": 2,
+        "disp": true,
+        "width": "5",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "76100c569bb71973",
+        "type": "ui_group",
+        "name": "Motion Warning",
+        "tab": "9f7917c793833ec4",
+        "order": 1,
+        "disp": true,
+        "width": "9",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "a44656a9fcd531ae",
+        "type": "ui_group",
+        "name": "Logs",
+        "tab": "9f7917c793833ec4",
+        "order": 4,
+        "disp": true,
+        "width": "7",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "de84e8315f66e63b",
+        "type": "ui_group",
+        "name": "Group 1",
+        "tab": "",
+        "order": 1,
+        "disp": true,
+        "width": 6
+    },
+    {
+        "id": "6e4750a70425804e",
+        "type": "ui_group",
+        "name": "Servo Control ",
+        "tab": "9f7917c793833ec4",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "mqtt_in_uid",
+        "type": "mqtt in",
+        "z": "19d6d06d8c31909c",
+        "name": "ESP32 UID Data",
+        "topic": "esp32/rfid/uid",
+        "qos": "0",
+        "datatype": "utf8",
+        "broker": "068907cb454e4eea",
+        "nl": false,
+        "rap": false,
+        "inputs": 0,
+        "x": 240,
+        "y": 200,
+        "wires": [
+            [
+                "function_rfid_process"
+            ]
+        ]
+    },
+    {
+        "id": "function_rfid_process",
+        "type": "function",
+        "z": "19d6d06d8c31909c",
+        "name": "Process RFID Data",
+        "func": "// Xử lý dữ liệu từ ESP32\nconst currentTime = new Date().toLocaleString();\nconst validUID = \"15 75 FE 28\"; // Thay bằng UID hợp lệ của bạn\n\nlet status = \"Invalid\";\nif (msg.payload.trim() === validUID) {\n    status = \"Valid\";\n}\n\n// Tạo đối tượng dữ liệu\nmsg.payload = {\n    uid: msg.payload.trim(),\n    time: currentTime,\n    status: status\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 200,
+        "wires": [
+            [
+                "dashboard_text_uid",
+                "dashboard_text_status",
+                "mqtt_out_log"
+            ]
+        ]
+    },
+    {
+        "id": "dashboard_text_uid",
+        "type": "ui_text",
+        "z": "19d6d06d8c31909c",
+        "group": "1c87c1a181057836",
+        "order": 1,
+        "width": "5",
+        "height": "2",
+        "name": "RFID UID Display",
+        "label": "Current UID",
+        "format": "{{msg.payload.uid}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 690,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "dashboard_text_status",
+        "type": "ui_text",
+        "z": "19d6d06d8c31909c",
+        "group": "1c87c1a181057836",
+        "order": 2,
+        "width": "5",
+        "height": "2",
+        "name": "RFID Status",
+        "label": "Card Status",
+        "format": "{{msg.payload.status}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 670,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "mqtt_out_log",
+        "type": "mqtt out",
+        "z": "19d6d06d8c31909c",
+        "name": "Log UID",
+        "topic": "esp32/rfid/log",
+        "qos": "0",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "068907cb454e4eea",
+        "x": 680,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "mqtt_out_servo",
+        "type": "mqtt out",
+        "z": "19d6d06d8c31909c",
+        "name": "Servo Control MQTT",
+        "topic": "esp32/servo/control",
+        "qos": "0",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "068907cb454e4eea",
+        "x": 580,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "dashboard_switch",
+        "type": "ui_switch",
+        "z": "19d6d06d8c31909c",
+        "name": "Servo Control",
+        "label": "Servo Lock",
+        "tooltip": "",
+        "group": "6e4750a70425804e",
+        "order": 1,
+        "width": "5",
+        "height": "3",
+        "passthru": true,
+        "decouple": "false",
+        "topic": "esp32/servo/control",
+        "topicType": "str",
+        "style": "",
+        "onvalue": "LOCK",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "UNLOCK",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "animate": true,
+        "className": "",
+        "x": 300,
+        "y": 340,
+        "wires": [
+            [
+                "mqtt_out_servo"
+            ]
+        ]
+    },
+    {
+        "id": "c02cbf5ff920c7e0",
+        "type": "mqtt in",
+        "z": "19d6d06d8c31909c",
+        "name": "Motion Warning",
+        "topic": "esp32/motion/warning",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "068907cb454e4eea",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 280,
+        "y": 460,
+        "wires": [
+            [
+                "476b9c15c2c1e17b"
+            ]
+        ]
+    },
+    {
+        "id": "aee4369c4f3e9555",
+        "type": "mqtt in",
+        "z": "19d6d06d8c31909c",
+        "name": "Servo Status",
+        "topic": "esp32/servo/status",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "068907cb454e4eea",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 290,
+        "y": 400,
+        "wires": [
+            [
+                "39bf4c0c4d17df2f"
+            ]
+        ]
+    },
+    {
+        "id": "39bf4c0c4d17df2f",
+        "type": "ui_text",
+        "z": "19d6d06d8c31909c",
+        "group": "6222bfc6b5b313b7",
+        "order": 2,
+        "width": "5",
+        "height": "3",
+        "name": "",
+        "label": "Servo Status",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 490,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "476b9c15c2c1e17b",
+        "type": "ui_text",
+        "z": "19d6d06d8c31909c",
+        "group": "76100c569bb71973",
+        "order": 0,
+        "width": "9",
+        "height": "4",
+        "name": "Motion Warning",
+        "label": "Trạng thái chuyển động",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 520,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "ee1872f5163b5fae",
+        "type": "mqtt in",
+        "z": "19d6d06d8c31909c",
+        "name": "Receive logs",
+        "topic": "esp32/rfid/log",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "068907cb454e4eea",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 250,
+        "y": 80,
+        "wires": [
+            [
+                "e78639762c5bed04"
+            ]
+        ]
+    },
+    {
+        "id": "e78639762c5bed04",
+        "type": "function",
+        "z": "19d6d06d8c31909c",
+        "name": "function 1",
+        "func": "// Cấu trúc lại msg.payload để phù hợp với bảng DataTable\nmsg.payload = {\n    uid: msg.payload.uid,\n    time: msg.payload.time,\n    status: msg.payload.status\n};\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 80,
+        "wires": [
+            [
+                "1a0ca57bd38f94bd"
+            ]
+        ]
+    },
+    {
+        "id": "1a0ca57bd38f94bd",
+        "type": "ui_template",
+        "z": "19d6d06d8c31909c",
+        "group": "a44656a9fcd531ae",
+        "name": "Table of logs",
+        "order": 3,
+        "width": "7",
+        "height": "4",
+        "format": "<table id=\"rfidTable\" class=\"display\">\n  <thead>\n    <tr>\n      <th>UID</th>\n      <th>Time</th>\n      <th>Status</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>{{msg.payload.uid}}</td>\n      <td>{{msg.payload.time}}</td>\n      <td>{{msg.payload.status}}</td>\n    </tr>\n  </tbody>\n</table>\n\n<script>\n  $(document).ready( function () {\n    $('#rfidTable').DataTable();\n  });\n</script>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 630,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    }
+]
