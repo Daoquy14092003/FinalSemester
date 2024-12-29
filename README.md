@@ -101,7 +101,10 @@ Trong những tòa nhà, khu vực làm việc, hay nhà thông minh, việc qu�
 ![Mô Phỏng](images/MySystemSimulation.png)
 
 ## Kết quả  
-![Kết Quả]()
+![Kết Quả](images/MySystem.jpg)
+
+![Kết Quả](images/MySystemVideo.mp4)
+
 ![Dashboard](images/MyNodeRedDashboard.png)
   - Khi phát hiện chuyển động (ví dụ: có người đến gần cửa),Buzzer sẽ kêu khi có chuyển động, nhằm cảnh báo người dùng về sự hiện diện gần cửa
     
