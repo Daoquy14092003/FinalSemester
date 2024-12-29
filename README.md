@@ -105,6 +105,7 @@ Trong những tòa nhà, khu vực làm việc, hay nhà thông minh, việc qu�
 
 ## Kết quả  
 **Demo Video**
+
 [Watch My Demo Video](https://youtu.be/m7gjFQVQnFE)
  - Khi phát hiện chuyển động (ví dụ: có người đến gần cửa),Buzzer sẽ kêu khi có chuyển động, nhằm cảnh báo người dùng về sự hiện diện gần cửa
     
