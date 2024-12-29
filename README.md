@@ -100,13 +100,13 @@ Trong những tòa nhà, khu vực làm việc, hay nhà thông minh, việc qu�
 ## Mô phỏng hệ thống 
 ![Mô Phỏng](images/MySystemSimulation.png)
 
-## Kết quả  
+## Mô hình thực tế
 ![Kết Quả](images/MySystem.jpg)
 
-![Kết Quả](images/MySystemVideo.mp4)
-
-![Dashboard](images/MyNodeRedDashboard.png)
-  - Khi phát hiện chuyển động (ví dụ: có người đến gần cửa),Buzzer sẽ kêu khi có chuyển động, nhằm cảnh báo người dùng về sự hiện diện gần cửa
+## Kết quả  
+**Demo Video**
+[Watch My Demo Video](https://youtu.be/m7gjFQVQnFE)
+ - Khi phát hiện chuyển động (ví dụ: có người đến gần cửa),Buzzer sẽ kêu khi có chuyển động, nhằm cảnh báo người dùng về sự hiện diện gần cửa
     
   - Khi người dùng quét thẻ RFID với UID đúng :
     - Servo motor điều khiển cơ chế mở/đóng cửa. Khi thẻ hợp lệ được quét, servo motor sẽ quay đến góc xác định, mở hoặc đóng cửa.
@@ -122,13 +122,16 @@ Trong những tòa nhà, khu vực làm việc, hay nhà thông minh, việc qu�
     - Khi có sự phát hiện chuyển động và thẻ RFID không hợp lệ, hệ thống sẽ gửi thông báo cảnh báo "Invalid Card" qua LCD.
     - Cảnh báo này giúp người dùng nhận biết về hành vi không hợp lệ và có thể xử lý tình huống.
 
+**Node-RED Dashboard**
+![Dashboard](images/MyNodeRedDashboard.png)
+ 
   - Kết quả hiển thị trên Node-Red Dashboard :
     - Trạng thái chuyển động được nhận biết với text "Motion Detected"
     - Hiển thị UID, trạng thái thẻ RFID ( Card Status ) trên bảng điều khiển qua các Node Text.
     - Hiển thị lịch sử của lần quét thẻ RFID.
     - Khi muốn khóa điều khiển Servo, chỉ cần nhấn nút trên bảng điều khiển.
 
-  - Tính ổn định qua những lần thử nghiệm :
+**Tính ổn định qua những lần thử nghiệm**
     - Hệ thống hoạt động ổn trong quá trình phát hiện xâm nhập, quét thẻ RFID và mở cửa tự động.
     - Tuy nhiên vẫn có những lần thử nghiệm hệ thống hoạt động thiếu ổn định do vấn đề kết nối phần cứng và chưa tối ưu hóa phần mềm.
 
