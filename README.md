@@ -22,7 +22,7 @@ Trong những tòa nhà, khu vực làm việc, hay nhà thông minh, việc qu�
   - **LCD I2C (16x2)**: Hiển thị trạng thái.
 - **Phần Mềm**:
   - **NodeRed Dashboard**: Giao diện điều khiển và hiển thị.
-  - **MQTT Broker**: Kênh truyền thông tin giữa ESP32 và Node-RED..
+  - **MQTT Broker**: Kênh truyền thông tin giữa ESP32 và Node-RED.
   - **PlatformIO IDE**: Môi trường làm việc với ESP32.
 
 ## Sơ đồ kết nối chân
